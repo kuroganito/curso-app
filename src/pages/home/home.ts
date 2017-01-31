@@ -24,6 +24,6 @@ export class HomePage {
     });
   }
   seleccionarPelicula(pelicula: IPelicula) {
-      this.navCtrl.push(DetallePage);
+      this.navCtrl.push(DetallePage,{"pelicula":pelicula});
   }
 }
