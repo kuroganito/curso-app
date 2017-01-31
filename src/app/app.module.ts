@@ -2,7 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {PeliculaService} from '../providers/pelicula'
+import {PeliculaLocalService} from '../providers/peliculaLocal'
+import {PeliculaNodeService} from '../providers/peliculaNode'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import {PeliculaService} from '../providers/pelicula'
     MyApp,
     HomePage
   ],
-  providers: [PeliculaService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [PeliculaLocalService,PeliculaNodeService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PeliculaService, IPelicula } from '../../providers/pelicula'
+import { IPelicula } from '../../providers/pelicula'
+import { PeliculaLocalService } from '../../providers/peliculaLocal'
+import { PeliculaNodeService } from  '../../providers/peliculaNode'
 
 @Component({
   selector: 'page-home',
@@ -9,8 +11,16 @@ import { PeliculaService, IPelicula } from '../../providers/pelicula'
 export class HomePage {
   peliculas: Array<IPelicula>;
 
-  constructor(public navCtrl: NavController, public peliculaService: PeliculaService) {
-    this.peliculas = peliculaService.obtenerPeliculas();
+  constructor(public navCtrl: NavController, public peliculaLocalService: PeliculaLocalService
+  , public peliculaNodeService: PeliculaNodeService) {
+    //Local
+    //peliculaLocalService.obtenerPeliculas().subscribe(data =>{
+    //  this.peliculas = data;
+    //});
+    //Remote
+    peliculaNodeService.obtenerPeliculas().subscribe(data =>{
+      this.peliculas = data;
+    });
   }
   seleccionarPelicula(pelicula: IPelicula) {
 
