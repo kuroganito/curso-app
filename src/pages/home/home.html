@@ -1,13 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      InfoCineApp
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <ul>
-    <li *ngFor="let pelicula of peliculas" (click)="seleccionarPelicula(pelicula)">{{pelicula.titulo}}</li>
-  </ul>
+<ion-content>
+  <ion-list>
+    <button ion-item detail-push *ngFor="let pelicula of peliculas" (click)="seleccionarPelicula(pelicula)">{{pelicula.titulo}}</button>
+  </ion-list>
 </ion-content>
