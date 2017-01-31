@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { IPelicula } from '../../providers/pelicula'
 import { PeliculaLocalService } from '../../providers/peliculaLocal'
 import { PeliculaNodeService } from  '../../providers/peliculaNode'
+import { DetallePage } from '../detalle/detalle';
 
 @Component({
   selector: 'page-home',
@@ -23,6 +24,6 @@ export class HomePage {
     });
   }
   seleccionarPelicula(pelicula: IPelicula) {
-
+      this.navCtrl.push(DetallePage);
   }
 }
