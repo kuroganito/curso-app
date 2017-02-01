@@ -8,13 +8,16 @@ import { IPelicula } from '../../providers/pelicula'
 })
 export class DetallePage {
   pelicula: IPelicula;
-  
+  stars: Array<string>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pelicula = navParams.get("pelicula");
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetallePage');
+    this.stars = [];
+    for (let i = 0; i < 5; i++)
+      this.stars.push(this.pelicula.calificacion > i ? 'star' : 'star-outline')
+
   }
 
 }

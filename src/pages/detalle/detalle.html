@@ -8,5 +8,9 @@
 
 
 <ion-content padding>
-
+<img  src="{{pelicula.imagen}}">
+<div id="star-container">
+   <ion-icon *ngFor="let star of stars" name="{{star}}"></ion-icon>
+</div>
+<p><b>Sinopsis:</b><br> {{pelicula.sinopsis}}</p>
 </ion-content>

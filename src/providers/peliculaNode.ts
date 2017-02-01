@@ -9,7 +9,7 @@ export class PeliculaNodeService implements IPeliculaService {
     constructor(public http:Http) {}
 
     obtenerPeliculas(): Observable<Array<IPelicula>> {
-        return this.http.get('http://localhost:3000')
+        return this.http.get('https://curso-node.herokuapp.com/')
         .map((res => ( res.json() as IPelicula[] )));
     }
 }
